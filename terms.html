@@ -1,413 +1,318 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="dark" lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Terms of Service - SuperU</title>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Terms of Service - SUPERU</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ffffff",
+                        "on-primary": "#000000",
+                        "background": "#0a0a0a",
+                        "surface": "#121212",
+                        "surface-variant": "#1e1e1e",
+                        "outline": "#2a2a2a",
+                        "outline-variant": "#3f3f3f",
+                        "secondary": "#d1d1d1",
+                        "tertiary": "#22c55e",
+                        "error": "#ef4444",
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope", "sans-serif"],
+                        "body": ["Manrope", "sans-serif"],
+                        "label": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0px", "lg": "2px", "xl": "4px", "full": "9999px"},
+                },
+            },
+        }
+    </script>
     <style>
-        :root {
-            --primary-color: #2563eb;
-            --text-color: #1f2937;
-            --text-light: #6b7280;
-            --background: #ffffff;
-            --background-alt: #f9fafb;
-            --border-color: #e5e7eb;
-            --warning-bg: #fef2f2;
-            --warning-border: #ef4444;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.7;
-            color: var(--text-color);
-            background-color: var(--background);
-        }
-        
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-        
-        header {
-            text-align: center;
-            margin-bottom: 50px;
-            padding-bottom: 30px;
-            border-bottom: 2px solid var(--border-color);
-        }
-        
-        .logo {
-            font-size: 32px;
-            font-weight: 700;
-            color: var(--primary-color);
-            margin-bottom: 10px;
-        }
-        
-        h1 {
-            font-size: 36px;
-            margin-bottom: 15px;
-            color: var(--text-color);
-        }
-        
-        .updated-date {
-            color: var(--text-light);
-            font-size: 14px;
-        }
-        
-        h2 {
-            font-size: 24px;
-            margin-top: 40px;
-            margin-bottom: 15px;
-            color: var(--text-color);
-            border-left: 4px solid var(--primary-color);
-            padding-left: 15px;
-        }
-        
-        h3 {
-            font-size: 18px;
-            margin-top: 25px;
-            margin-bottom: 10px;
-            color: var(--text-color);
-        }
-        
-        p {
-            margin-bottom: 15px;
-            color: var(--text-color);
-        }
-        
-        ul, ol {
-            margin-left: 25px;
-            margin-bottom: 15px;
-        }
-        
-        li {
-            margin-bottom: 8px;
-        }
-        
-        strong {
-            color: var(--text-color);
-            font-weight: 600;
-        }
-        
-        .medical-disclaimer {
-            background-color: var(--warning-bg);
-            border: 2px solid var(--warning-border);
-            border-radius: 8px;
-            padding: 25px;
-            margin: 30px 0;
-        }
-        
-        .medical-disclaimer h3 {
-            color: #991b1b;
-            margin-top: 0;
-            font-size: 20px;
-        }
-        
-        .medical-disclaimer p {
-            color: #7f1d1d;
-        }
-        
-        .acknowledgment-box {
-            background-color: #f0fdf4;
-            border: 1px solid #22c55e;
-            border-radius: 8px;
-            padding: 20px;
-            margin: 20px 0;
-        }
-        
-        .acknowledgment-box strong {
-            color: #166534;
-        }
-        
-        .section-box {
-            background-color: var(--background-alt);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 20px;
-            margin: 20px 0;
-        }
-        
-        a {
-            color: var(--primary-color);
-            text-decoration: none;
-        }
-        
-        a:hover {
-            text-decoration: underline;
-        }
-        
-        .contact-info {
-            background-color: var(--background-alt);
-            padding: 25px;
-            border-radius: 8px;
-            margin-top: 30px;
-        }
-        
-        .contact-info h3 {
-            margin-top: 0;
-        }
-        
-        .subscription-card {
-            background-color: var(--background-alt);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 20px;
-            margin: 15px 0;
-        }
-        
-        .subscription-card h4 {
-            color: var(--primary-color);
-            margin-bottom: 10px;
-        }
-        
-        footer {
-            text-align: center;
-            margin-top: 50px;
-            padding-top: 30px;
-            border-top: 2px solid var(--border-color);
-            color: var(--text-light);
-            font-size: 14px;
-        }
-        
-        @media (max-width: 600px) {
-            .container {
-                padding: 20px 15px;
-            }
-            
-            h1 {
-                font-size: 28px;
-            }
-            
-            h2 {
-                font-size: 20px;
-            }
-        }
+        body { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; letter-spacing: -0.01em; }
     </style>
 </head>
-<body>
-    <div class="container">
-        <header>
-	<div class="logo">SuperU</div>
-            <h1>Terms of Service</h1>
-            <p class="updated-date">Last Updated: April 2, 2025</p>
-            <p class="updated-date">Effective Date: April 2, 2025</p>
+<body class="bg-background text-primary font-body selection:bg-primary selection:text-on-primary">
+    <!-- TopNavBar -->
+    <nav class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-outline">
+        <div class="flex justify-between items-center px-6 py-3 max-w-[1600px] mx-auto">
+            <div class="flex items-center gap-8">
+                <a href="index.html" class="text-sm font-extrabold tracking-[0.2em] flex items-center gap-2">
+                    <span class="w-2 h-2 bg-tertiary"></span>
+                    SUPERU
+                </a>
+            </div>
+            <div class="flex items-center gap-4">
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-24 pb-16 px-6 max-w-4xl mx-auto">
+        <header class="text-center mb-16 border-b border-outline pb-12">
+            <h1 class="text-[3rem] font-extrabold tracking-tight uppercase leading-none mb-4">Terms of Service</h1>
+            <p class="text-secondary text-sm font-mono">Last Updated: April 2, 2025</p>
+            <p class="text-secondary text-sm font-mono">Effective Date: April 2, 2025</p>
         </header>
 
-        <section>
-            <h2>1. Agreement to Terms</h2>
-	<p>By downloading, installing, or using the SuperU mobile application ("App"), you agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, do not use the App.</p>
-        </section>
-
-        <section>
-            <h2>2. Description of Service</h2>
-	<p>SuperU is a nutrition tracking and meal planning application that provides:</p>
-            <ul>
-                <li>Personalized nutrition recommendations</li>
-                <li>Meal logging and tracking</li>
-                <li>Nutrient analysis and deficiency identification</li>
-                <li>Blood sugar estimation for health-conscious users</li>
-                <li>Premium subscription features</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>3. Medical Disclaimer</h2>
-            <div class="medical-disclaimer">
-                <h3>⚠️ IMPORTANT: READ CAREFULLY</h3>
-	<p><strong>SuperU is NOT a medical device and is for informational purposes only.</strong></p>
-                <ul>
-                    <li>The App does not provide medical advice, diagnosis, or treatment</li>
-                    <li>Blood sugar estimates are approximations and should not replace glucose monitoring</li>
-                    <li>Nutrient deficiency warnings are educational, not diagnostic</li>
-                    <li>Always consult a qualified healthcare professional before making dietary changes, especially if you have diabetes, are pregnant, or have other health conditions</li>
-                    <li>Never disregard professional medical advice or delay seeking treatment because of information in this App</li>
-                </ul>
+        <section class="space-y-8">
+            <div class="border-l-2 border-tertiary pl-6">
+                <h2 class="text-xl font-bold uppercase tracking-tight mb-4">1. Agreement to Terms</h2>
+                <p class="text-secondary leading-relaxed">By downloading, installing, or using the SuperU mobile application ("App"), you agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, do not use the App.</p>
             </div>
-            
-            <div class="acknowledgment-box">
-                <p><strong>By using this App, you acknowledge that:</strong></p>
-                <ul>
-                    <li>You are solely responsible for your health decisions</li>
-                    <li>The App creators are not liable for any health outcomes</li>
-                    <li>You will consult healthcare professionals for medical concerns</li>
-                </ul>
-            </div>
-        </section>
 
-        <section>
-            <h2>4. User Accounts and Data</h2>
-            
-            <h3>4.1 No Account Required</h3>
-            <ul>
-                <li>The App does not require account creation</li>
-                <li>All data is stored locally on your device</li>
-                <li>You are responsible for backing up your data</li>
-            </ul>
-
-            <h3>4.2 Data Security</h3>
-            <ul>
-                <li>You are responsible for maintaining the security of your device</li>
-                <li>We are not liable for data loss due to device loss, damage, or unauthorized access</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>5. Premium Subscriptions</h2>
-            
-            <h3>5.1 Subscription Terms</h3>
-            <ul>
-                <li>Premium subscriptions are available as monthly or yearly plans</li>
-                <li>Payment is processed through Apple App Store via your Apple ID</li>
-                <li>Prices are displayed in the App before purchase</li>
-            </ul>
-
-            <div class="subscription-card">
-                <h4>5.2 Billing</h4>
-                <ul>
-                    <li>Subscription automatically renews unless cancelled at least 24 hours before the end of the current period</li>
-                    <li>Apple will charge your account upon confirmation of purchase</li>
-                    <li>Account will be charged for renewal within 24 hours prior to the end of the current period</li>
+            <div class="border-l-2 border-tertiary pl-6">
+                <h2 class="text-xl font-bold uppercase tracking-tight mb-4">2. Description of Service</h2>
+                <p class="text-secondary leading-relaxed mb-4">SuperU is a nutrition tracking and meal planning application that provides:</p>
+                <ul class="list-disc list-inside text-secondary space-y-2">
+                    <li>Personalized nutrition recommendations</li>
+                    <li>Meal logging and tracking</li>
+                    <li>Nutrient analysis and deficiency identification</li>
+                    <li>Blood sugar estimation for health-conscious users</li>
+                    <li>Premium subscription features</li>
                 </ul>
             </div>
 
-            <div class="subscription-card">
-                <h4>5.3 Cancellation</h4>
-                <ul>
-                    <li>You can cancel your subscription at any time in Settings > [Your Name] > Subscriptions</li>
-                    <li>Cancel at least 24 hours before the end of the billing period to avoid being charged</li>
-                    <li>After cancellation, premium features remain available until the end of the current billing period</li>
+            <div class="border-l-2 border-error pl-6">
+                <h2 class="text-xl font-bold uppercase tracking-tight mb-4">3. Medical Disclaimer</h2>
+                <div class="bg-surface border-2 border-error p-6 mb-6">
+                    <h3 class="text-lg font-bold text-error mb-4">⚠️ IMPORTANT: READ CAREFULLY</h3>
+                    <p class="text-secondary leading-relaxed mb-4"><strong class="text-error">SuperU is NOT a medical device and is for informational purposes only.</strong></p>
+                    <ul class="list-disc list-inside text-secondary space-y-2">
+                        <li>The App does not provide medical advice, diagnosis, or treatment</li>
+                        <li>Blood sugar estimates are approximations and should not replace glucose monitoring</li>
+                        <li>Nutrient deficiency warnings are educational, not diagnostic</li>
+                        <li>Always consult a qualified healthcare professional before making dietary changes, especially if you have diabetes, are pregnant, or have other health conditions</li>
+                        <li>Never disregard professional medical advice or delay seeking treatment because of information in this App</li>
+                    </ul>
+                </div>
+
+                <div class="bg-surface border border-tertiary p-6 mb-6">
+                    <p class="text-secondary font-bold mb-3">By using this App, you acknowledge that:</p>
+                    <ul class="list-disc list-inside text-secondary space-y-2">
+                        <li>You are solely responsible for your health decisions</li>
+                        <li>The App creators are not liable for any health outcomes</li>
+                        <li>You will consult healthcare professionals for medical concerns</li>
+                    </ul>
+                </div>
+
+                <div class="bg-surface border-2 border-error p-6">
+                    <h4 class="text-error font-bold mb-3">🚨 NO EMERGENCY USE</h4>
+                    <p class="text-secondary leading-relaxed">This App is NOT intended for emergency or critical medical situations. In case of emergency, contact emergency services or a qualified medical professional immediately. Do not rely on this App for urgent health decisions.</p>
+                </div>
+            </div>
+
+            <div class="border-l-2 border-tertiary pl-6">
+                <h2 class="text-xl font-bold uppercase tracking-tight mb-4">4. User Accounts and Data</h2>
+                
+                <h3 class="text-lg font-bold mb-3 text-primary">4.1 No Account Required</h3>
+                <ul class="list-disc list-inside text-secondary space-y-2 mb-6">
+                    <li>The App does not require account creation</li>
+                    <li>All data is stored locally on your device</li>
+                    <li>You are responsible for backing up your data</li>
+                </ul>
+
+                <h3 class="text-lg font-bold mb-3 text-primary">4.2 Data Security</h3>
+                <ul class="list-disc list-inside text-secondary space-y-2">
+                    <li>You are responsible for maintaining the security of your device</li>
+                    <li>We are not liable for data loss due to device loss, damage, or unauthorized access</li>
                 </ul>
             </div>
 
-            <div class="subscription-card">
-                <h4>5.4 Refunds</h4>
-                <ul>
-                    <li>Refunds are handled by Apple per the App Store Terms of Service</li>
-                    <li>Contact Apple Support for refund requests</li>
-                    <li>We do not provide direct refunds</li>
+            <div class="border-l-2 border-tertiary pl-6">
+                <h2 class="text-xl font-bold uppercase tracking-tight mb-4">5. Premium Subscriptions</h2>
+                
+                <h3 class="text-lg font-bold mb-3 text-primary">5.1 Subscription Terms</h3>
+                <ul class="list-disc list-inside text-secondary space-y-2 mb-6">
+                    <li>Premium subscriptions are available as monthly or yearly plans</li>
+                    <li>Payment is processed through Apple App Store via your Apple ID</li>
+                    <li>Prices are displayed in the App before purchase</li>
+                </ul>
+
+                <div class="bg-surface border border-outline p-6 mb-4">
+                    <h4 class="text-primary font-bold mb-3">5.2 Billing</h4>
+                    <ul class="list-disc list-inside text-secondary space-y-2">
+                        <li>Subscription automatically renews unless cancelled at least 24 hours before the end of the current period</li>
+                        <li>Apple will charge your account upon confirmation of purchase</li>
+                        <li>Account will be charged for renewal within 24 hours prior to the end of the current period</li>
+                    </ul>
+                </div>
+
+                <div class="bg-surface border border-outline p-6 mb-4">
+                    <h4 class="text-primary font-bold mb-3">5.3 Cancellation</h4>
+                    <ul class="list-disc list-inside text-secondary space-y-2">
+                        <li>You can cancel your subscription at any time in Settings > [Your Name] > Subscriptions</li>
+                        <li>Cancel at least 24 hours before the end of the billing period to avoid being charged</li>
+                        <li>After cancellation, premium features remain available until the end of the current billing period</li>
+                    </ul>
+                </div>
+
+                <div class="bg-surface border border-outline p-6">
+                    <h4 class="text-primary font-bold mb-3">5.4 Refunds</h4>
+                    <ul class="list-disc list-inside text-secondary space-y-2">
+                        <li>Refunds are handled by Apple per the App Store Terms of Service</li>
+                        <li>Contact Apple Support for refund requests</li>
+                        <li>We do not provide direct refunds</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-l-2 border-tertiary pl-6">
+                <h2 class="text-xl font-bold uppercase tracking-tight mb-4">6. Acceptable Use</h2>
+                <p class="text-secondary leading-relaxed mb-4">You agree NOT to:</p>
+                <ul class="list-disc list-inside text-secondary space-y-2">
+                    <li>Use the App for any unlawful purpose</li>
+                    <li>Attempt to reverse engineer, decompile, or disassemble the App</li>
+                    <li>Use the App to harm yourself or others</li>
+                    <li>Provide false or misleading health information</li>
+                    <li>Share your premium access with others</li>
+                    <li>Interfere with the App's functionality</li>
                 </ul>
             </div>
-        </section>
 
-        <section>
-            <h2>6. Acceptable Use</h2>
-            <p>You agree NOT to:</p>
-            <ul>
-                <li>Use the App for any unlawful purpose</li>
-                <li>Attempt to reverse engineer, decompile, or disassemble the App</li>
-                <li>Use the App to harm yourself or others</li>
-                <li>Provide false or misleading health information</li>
-                <li>Share your premium access with others</li>
-                <li>Interfere with the App's functionality</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>7. Intellectual Property</h2>
-            <ul>
-	<li>All content in the App, including text, graphics, logos, and software, is owned by SuperU or its licensors</li>
-                <li>The App is protected by copyright, trademark, and other laws</li>
-                <li>You may not copy, modify, or distribute App content without written permission</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>8. Third-Party Services</h2>
-            <p>The App uses third-party services:</p>
-            <div class="section-box">
-                <ul>
-                    <li><strong>Apple App Store:</strong> For payment processing and subscriptions</li>
-                    <li><strong>Firebase Analytics:</strong> For anonymous usage statistics</li>
-                    <li><strong>ObjectBox:</strong> For local data storage</li>
+            <div class="border-l-2 border-tertiary pl-6">
+                <h2 class="text-xl font-bold uppercase tracking-tight mb-4">7. Intellectual Property</h2>
+                <ul class="list-disc list-inside text-secondary space-y-2">
+                    <li>All content in the App, including text, graphics, logos, and software, is owned by SuperU or its licensors</li>
+                    <li>The App is protected by copyright, trademark, and other laws</li>
+                    <li>You may not copy, modify, or distribute App content without written permission</li>
                 </ul>
-                <p>Each third-party service operates under its own terms of service.</p>
+            </div>
+
+            <div class="border-l-2 border-tertiary pl-6">
+                <h2 class="text-xl font-bold uppercase tracking-tight mb-4">8. Third-Party Services</h2>
+                <p class="text-secondary leading-relaxed mb-4">The App uses third-party services:</p>
+                <div class="bg-surface border border-outline p-6">
+                    <ul class="list-disc list-inside text-secondary space-y-2 mb-4">
+                        <li><strong class="text-primary">Apple App Store:</strong> For payment processing and subscriptions</li>
+                        <li><strong class="text-primary">Firebase Analytics:</strong> For anonymous usage statistics</li>
+                        <li><strong class="text-primary">ObjectBox:</strong> For local data storage</li>
+                    </ul>
+                    <p class="text-secondary">Each third-party service operates under its own terms of service.</p>
+                </div>
+            </div>
+
+            <div class="border-l-2 border-tertiary pl-6">
+                <h2 class="text-xl font-bold uppercase tracking-tight mb-4">9. Limitation of Liability</h2>
+                <p class="text-secondary leading-relaxed mb-4">TO THE MAXIMUM EXTENT PERMITTED BY LAW:</p>
+                <ul class="list-disc list-inside text-secondary space-y-2">
+                    <li>The App is provided "AS IS" without warranties of any kind</li>
+                    <li>We do not guarantee the accuracy of nutrition information or health estimates</li>
+                    <li>We are not liable for any health outcomes, dietary decisions, or medical conditions</li>
+                    <li>We are not liable for data loss, device damage, or any indirect, incidental, or consequential damages</li>
+                    <li>Our total liability shall not exceed the amount you paid for the App (if any) in the past 12 months</li>
+                </ul>
+            </div>
+
+            <div class="border-l-2 border-tertiary pl-6">
+                <h2 class="text-xl font-bold uppercase tracking-tight mb-4">9.1 AI & Algorithm Disclaimer</h2>
+                <p class="text-secondary leading-relaxed mb-4">All recommendations, nutritional insights, and health estimations provided by SuperU are generated using automated algorithms. These include:</p>
+                <ul class="list-disc list-inside text-secondary space-y-2 mb-4">
+                    <li>Nutrient deficiency calculations</li>
+                    <li>Blood sugar impact estimates</li>
+                    <li>Meal suggestions and recommendations</li>
+                    <li>Daily nutrient requirement calculations</li>
+                </ul>
+                <div class="bg-surface border border-outline p-6">
+                    <p class="text-secondary leading-relaxed"><strong class="text-primary">Important:</strong> These recommendations are NOT reviewed by medical professionals, nutritionists, or healthcare providers. They are based on general algorithms and may not account for individual health conditions, allergies, or medical history. Always verify recommendations with a qualified healthcare professional.</p>
+                </div>
+            </div>
+
+            <div class="border-l-2 border-tertiary pl-6">
+                <h2 class="text-xl font-bold uppercase tracking-tight mb-4">9.2 Food Database Accuracy</h2>
+                <p class="text-secondary leading-relaxed mb-4">Nutritional values and food data displayed in the App are estimates based on publicly available databases and may not be 100% accurate. Factors affecting accuracy include:</p>
+                <ul class="list-disc list-inside text-secondary space-y-2">
+                    <li>Natural variations in food composition</li>
+                    <li>Differences in preparation methods</li>
+                    <li>Brand and regional variations</li>
+                    <li>Database update delays</li>
+                </ul>
+                <p class="text-secondary leading-relaxed">Users should not rely solely on this App for critical nutritional decisions.</p>
+            </div>
+
+            <div class="border-l-2 border-tertiary pl-6">
+                <h2 class="text-xl font-bold uppercase tracking-tight mb-4">10. Indemnification</h2>
+                <p class="text-secondary leading-relaxed mb-4">You agree to indemnify and hold harmless SuperU, its creators, employees, and agents from any claims, damages, or expenses arising from:</p>
+                <ul class="list-disc list-inside text-secondary space-y-2">
+                    <li>Your use of the App</li>
+                    <li>Your violation of these Terms</li>
+                    <li>Your violation of any third-party rights</li>
+                </ul>
+            </div>
+
+            <div class="border-l-2 border-tertiary pl-6">
+                <h2 class="text-xl font-bold uppercase tracking-tight mb-4">11. Modifications to Terms</h2>
+                <p class="text-secondary leading-relaxed">We may modify these Terms at any time. Changes will be effective upon posting to <a href="https://superyou.life/terms" class="text-tertiary hover:text-primary transition-colors">https://superyou.life/terms</a>. Your continued use of the App after changes constitutes acceptance.</p>
+            </div>
+
+            <div class="border-l-2 border-tertiary pl-6">
+                <h2 class="text-xl font-bold uppercase tracking-tight mb-4">12. Termination</h2>
+                <p class="text-secondary leading-relaxed mb-4">We may terminate or suspend your access to the App at any time, without notice, for:</p>
+                <ul class="list-disc list-inside text-secondary space-y-2 mb-4">
+                    <li>Violation of these Terms</li>
+                    <li>Any other reason at our sole discretion</li>
+                </ul>
+                <p class="text-secondary leading-relaxed mb-4">Upon termination:</p>
+                <ul class="list-disc list-inside text-secondary space-y-2">
+                    <li>Your right to use the App ceases immediately</li>
+                    <li>Premium subscription fees are non-refundable</li>
+                    <li>Sections that should survive termination will remain in effect</li>
+                </ul>
+            </div>
+
+            <div class="border-l-2 border-tertiary pl-6">
+                <h2 class="text-xl font-bold uppercase tracking-tight mb-4">13. Governing Law</h2>
+                <p class="text-secondary leading-relaxed mb-4">These Terms shall be governed by and construed in accordance with the laws of India. Any disputes arising under or in connection with these Terms shall be subject to the exclusive jurisdiction of the courts in Gandhinagar, Gujarat, India.</p>
+                <p class="text-secondary leading-relaxed">For users accessing the App from other jurisdictions, you agree that these Terms and any dispute arising hereunder shall be governed by the laws of India, and you consent to the jurisdiction of courts in Gandhinagar, Gujarat, India.</p>
+            </div>
+
+            <div class="border-l-2 border-tertiary pl-6">
+                <h2 class="text-xl font-bold uppercase tracking-tight mb-4">14. Dispute Resolution</h2>
+                <p class="text-secondary leading-relaxed mb-4">Any disputes arising from these Terms or use of the App shall be resolved through:</p>
+                <ol class="list-decimal list-inside text-secondary space-y-2">
+                    <li>Good faith negotiation</li>
+                    <li>If unresolved, binding arbitration in California, USA</li>
+                    <li>Each party bears its own costs</li>
+                </ol>
+            </div>
+
+            <div class="border-l-2 border-tertiary pl-6">
+                <h2 class="text-xl font-bold uppercase tracking-tight mb-4">15. Severability</h2>
+                <p class="text-secondary leading-relaxed">If any provision of these Terms is found unenforceable, the remaining provisions will continue in full force and effect.</p>
+            </div>
+
+            <div class="bg-surface border border-outline p-6">
+                <h3 class="text-lg font-bold mb-4">16. Contact Information</h3>
+                <p class="text-secondary mb-2">For questions about these Terms:</p>
+                <p class="text-secondary"><strong class="text-primary">Email:</strong> <a href="mailto:contact@superyou.life" class="text-tertiary hover:text-primary transition-colors">contact@superyou.life</a></p>
+                <p class="text-secondary"><strong class="text-primary">Website:</strong> <a href="https://superyou.life" class="text-tertiary hover:text-primary transition-colors">https://superyou.life</a></p>
+            </div>
+
+            <div class="border-l-2 border-tertiary pl-6">
+                <h2 class="text-xl font-bold uppercase tracking-tight mb-4">17. Entire Agreement</h2>
+                <p class="text-secondary leading-relaxed">These Terms, along with the <a href="privacy.html" class="text-tertiary hover:text-primary transition-colors">Privacy Policy</a>, constitute the entire agreement between you and SuperU regarding the App.</p>
             </div>
         </section>
+    </main>
 
-        <section>
-            <h2>9. Limitation of Liability</h2>
-            <p>TO THE MAXIMUM EXTENT PERMITTED BY LAW:</p>
-            <ul>
-                <li>The App is provided "AS IS" without warranties of any kind</li>
-                <li>We do not guarantee the accuracy of nutrition information or health estimates</li>
-                <li>We are not liable for any health outcomes, dietary decisions, or medical conditions</li>
-                <li>We are not liable for data loss, device damage, or any indirect, incidental, or consequential damages</li>
-                <li>Our total liability shall not exceed the amount you paid for the App (if any) in the past 12 months</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>10. Indemnification</h2>
-	<p>You agree to indemnify and hold harmless SuperU, its creators, employees, and agents from any claims, damages, or expenses arising from:</p>
-            <ul>
-                <li>Your use of the App</li>
-                <li>Your violation of these Terms</li>
-                <li>Your violation of any third-party rights</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>11. Modifications to Terms</h2>
-            <p>We may modify these Terms at any time. Changes will be effective upon posting to <a href="https://superyou.life/terms">https://superyou.life/terms</a>. Your continued use of the App after changes constitutes acceptance.</p>
-        </section>
-
-        <section>
-            <h2>12. Termination</h2>
-            <p>We may terminate or suspend your access to the App at any time, without notice, for:</p>
-            <ul>
-                <li>Violation of these Terms</li>
-                <li>Any other reason at our sole discretion</li>
-            </ul>
-            <p>Upon termination:</p>
-            <ul>
-                <li>Your right to use the App ceases immediately</li>
-                <li>Premium subscription fees are non-refundable</li>
-                <li>Sections that should survive termination will remain in effect</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>13. Governing Law</h2>
-            <p>These Terms are governed by the laws of the United States and the State of California, without regard to conflict of law principles.</p>
-        </section>
-
-        <section>
-            <h2>14. Dispute Resolution</h2>
-            <p>Any disputes arising from these Terms or use of the App shall be resolved through:</p>
-            <ol>
-                <li>Good faith negotiation</li>
-                <li>If unresolved, binding arbitration in California, USA</li>
-                <li>Each party bears its own costs</li>
-            </ol>
-        </section>
-
-        <section>
-            <h2>15. Severability</h2>
-            <p>If any provision of these Terms is found unenforceable, the remaining provisions will continue in full force and effect.</p>
-        </section>
-
-        <section class="contact-info">
-            <h3>16. Contact Information</h3>
-            <p>For questions about these Terms:</p>
-	<p><strong>Email:</strong> <a href="mailto:contact@superyou.life">contact@superyou.life</a></p>
-            <p><strong>Website:</strong> <a href="https://superyou.life">https://superyou.life</a></p>
-        </section>
-
-        <section>
-            <h2>17. Entire Agreement</h2>
-	<p>These Terms, along with the <a href="https://superyou.life/privacy">Privacy Policy</a>, constitute the entire agreement between you and SuperU regarding the App.</p>
-        </section>
-
-        <footer>
-	<p>&copy; 2025 SuperU. All rights reserved.</p>
-            <p><a href="https://superyou.life/privacy">Privacy Policy</a> | <a href="https://superyou.life/terms">Terms of Service</a></p>
-        </footer>
-    </div>
+    <!-- Footer -->
+    <footer class="bg-background border-t border-outline">
+        <div class="flex flex-col md:flex-row justify-between items-center px-6 py-12 max-w-[1600px] mx-auto gap-8">
+            <div>
+                <div class="text-sm font-black tracking-[0.2em] mb-3">SUPERU</div>
+                <div class="text-[9px] uppercase tracking-widest text-secondary font-medium">
+                    © 2025 SUPERU. METABOLIC ARCHITECT SYSTEMS. ALL DATA ENCRYPTED.
+                </div>
+            </div>
+            <div class="flex flex-wrap justify-center gap-8">
+                <a class="text-[10px] font-bold uppercase tracking-widest text-secondary hover:text-primary transition-colors" href="privacy.html">Privacy_Layer</a>
+                <a class="text-[10px] font-bold uppercase tracking-widest text-secondary hover:text-primary transition-colors" href="terms.html">Terms_Execute</a>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
