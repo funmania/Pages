@@ -1,156 +1,325 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="dark" lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SuperYou - Nutrition Tracking App</title>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>SUPERU | Bio-Performance Terminal</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ffffff",
+                        "on-primary": "#000000",
+                        "background": "#0a0a0a",
+                        "surface": "#121212",
+                        "surface-variant": "#1e1e1e",
+                        "outline": "#2a2a2a",
+                        "outline-variant": "#3f3f3f",
+                        "secondary": "#d1d1d1",
+                        "tertiary": "#22c55e",
+                        "error": "#ef4444",
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope", "sans-serif"],
+                        "body": ["Manrope", "sans-serif"],
+                        "label": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0px", "lg": "2px", "xl": "4px", "full": "9999px"},
+                },
+            },
+        }
+    </script>
     <style>
-        :root {
-            --primary-color: #2563eb;
-            --text-color: #1f2937;
-            --text-light: #6b7280;
-            --background: #ffffff;
-            --background-alt: #f9fafb;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .container {
-            max-width: 600px;
-            margin: 20px;
-            padding: 60px 40px;
-            background: var(--background);
-            border-radius: 24px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-            text-align: center;
-        }
-        
-        .logo {
-            font-size: 48px;
-            font-weight: 800;
-            color: var(--primary-color);
-            margin-bottom: 10px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        h1 {
-            font-size: 32px;
-            margin-bottom: 15px;
-            color: var(--text-color);
-        }
-        
-        .tagline {
-            color: var(--text-light);
-            font-size: 18px;
-            margin-bottom: 40px;
-        }
-        
-        .links {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-        
-        .btn {
-            display: inline-block;
-            padding: 16px 32px;
-            background: var(--background-alt);
-            color: var(--text-color);
-            text-decoration: none;
-            border-radius: 12px;
-            font-weight: 600;
-            font-size: 16px;
-            transition: all 0.3s ease;
-            border: 2px solid #e5e7eb;
-        }
-        
-        .btn:hover {
-            background: var(--primary-color);
-            color: white;
-            border-color: var(--primary-color);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3);
-        }
-        
-        .btn-primary {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border: none;
-        }
-        
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
-        }
-        
-        .footer {
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid #e5e7eb;
-            color: var(--text-light);
-            font-size: 14px;
-        }
-        
-        .footer a {
-            color: var(--primary-color);
-            text-decoration: none;
-        }
-        
-        .footer a:hover {
-            text-decoration: underline;
-        }
-        
-        @media (max-width: 600px) {
-            .container {
-                padding: 40px 25px;
-            }
-            
-            .logo {
-                font-size: 36px;
-            }
-            
-            h1 {
-                font-size: 24px;
-            }
-        }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+        body { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; letter-spacing: -0.01em; }
+        .technical-grid { background-image: radial-gradient(circle, #2a2a2a 1px, transparent 1px); background-size: 32px 32px; }
+        .scanline { background: linear-gradient(to bottom, transparent 50%, rgba(255,255,255,0.02) 50%); background-size: 100% 4px; }
     </style>
 </head>
-<body>
-    <div class="container">
-        <div class="logo">SuperYou</div>
-        <h1>Your Personal Nutrition Assistant</h1>
-        <p class="tagline">Track meals, analyze nutrients, and achieve your health goals with AI-powered insights.</p>
-        
-        <div class="links">
-            <a href="https://apps.apple.com/app/superyou" class="btn btn-primary">Download on App Store</a>
-            <a href="/privacy" class="btn">Privacy Policy</a>
-            <a href="/terms" class="btn">Terms of Service</a>
+<body class="bg-background text-primary font-body selection:bg-primary selection:text-on-primary">
+    <!-- TopNavBar -->
+    <nav class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-outline">
+        <div class="flex justify-between items-center px-6 py-3 max-w-[1600px] mx-auto">
+            <div class="flex items-center gap-8">
+                <div class="text-sm font-extrabold tracking-[0.2em] flex items-center gap-2">
+                    <span class="w-2 h-2 bg-tertiary"></span>
+                    SUPERU
+                </div>
+                <div class="hidden md:flex items-center space-x-6">
+                    <a class="text-[11px] uppercase tracking-[0.15em] font-semibold text-primary border-b border-primary pb-0.5" href="#">Terminal</a>
+                    <a class="text-[11px] uppercase tracking-[0.15em] font-semibold text-secondary hover:text-primary transition-colors" href="#">Glucose</a>
+                    <a class="text-[11px] uppercase tracking-[0.15em] font-semibold text-secondary hover:text-primary transition-colors" href="#">Nutrients</a>
+                </div>
+            </div>
+            <div class="flex items-center gap-4">
+                <span class="text-[10px] font-mono text-tertiary hidden sm:block">DATA_STREAM: LIVE</span>
+                <button class="bg-primary px-5 py-2 text-on-primary text-[11px] font-bold uppercase tracking-widest hover:bg-secondary transition-colors">
+                    Access Portal
+                </button>
+            </div>
         </div>
-        
-        <div class="footer">
-            <p>&copy; 2025 SuperYou. All rights reserved.</p>
-	<p style="margin-top: 10px;">
-				<a href="mailto:contact@superyou.life">contact@superyou.life</a>
-				</p>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-24 px-6 max-w-[1600px] mx-auto technical-grid">
+        <div class="grid lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-5">
+                <div class="inline-flex items-center gap-2 px-2 py-1 border border-outline bg-surface mb-8">
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-secondary">Integrated Nutrition &amp; Glucose</span>
+                    <span class="w-1 h-1 rounded-full bg-tertiary animate-pulse"></span>
+                </div>
+                <h1 class="font-headline text-[4rem] font-extrabold leading-[0.95] tracking-tighter mb-8 uppercase">
+                    Optimization<br/>Engine.
+                </h1>
+                <p class="text-secondary text-lg max-w-md mb-12 leading-relaxed font-medium">
+                    SuperU: The high-fidelity interface for metabolic precision. Real-time glucose tracking meet clinical-grade nutritional analysis.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <button class="bg-primary text-on-primary px-8 py-4 text-[12px] font-bold uppercase tracking-[0.2em] hover:bg-secondary transition-all">
+                        Deploy Protocol — $3/mo
+                    </button>
+                    <button class="border border-outline text-primary px-8 py-4 text-[12px] font-bold uppercase tracking-[0.2em] hover:bg-surface transition-colors flex items-center gap-2">
+                        <span class="material-symbols-outlined text-[18px]">monitoring</span>
+                        View Interface
+                    </button>
+                </div>
+            </div>
+            <div class="lg:col-span-7 relative">
+                <div class="relative bg-surface border border-outline overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.5)]">
+                    <div class="absolute inset-0 scanline pointer-events-none opacity-50"></div>
+                    <div class="border-b border-outline p-3 flex items-center justify-between bg-surface-variant/50">
+                        <div class="flex gap-2">
+                            <div class="w-2.5 h-2.5 bg-outline-variant"></div>
+                            <div class="w-2.5 h-2.5 bg-outline-variant"></div>
+                            <div class="w-2.5 h-2.5 bg-outline-variant"></div>
+                        </div>
+                        <div class="text-[10px] font-mono text-secondary">SUPERU_CORE_OS_V.1.0</div>
+                    </div>
+                    <img class="w-full grayscale opacity-90 contrast-125" data-alt="Technical data dashboard showing glucose spikes and nutrient levels" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9f8MeOBhcOHTD24VdbhtLiVIEObFsZne0WbkN2hVGo3P75qc4Gf8pjxAovxIkO4pQ8QuPTD3sjgXP18FUXiaYYiW2I9QleEt0peQNh0jcEZbJG_eoqO2DjaZ-wpfwVlALkyu2hnJUDwYyfQXMlJvO6ofXBJJ9GQehMgzjI-6TntBjjMRjWl6tXIv8_1XBmiHM3VwzGlesXnz2G5TXs07eyJAb6dr2k_ouaLqAgooEeWDb7LxkEh7W_8mSSOsZhgeEplDD_qAvfl4"/>
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
+
+    <!-- Section 2: Features (1-3) -->
+    <section class="border-y border-outline bg-surface">
+        <div class="max-w-[1600px] mx-auto grid md:grid-cols-3 divide-x divide-outline border-b border-outline">
+            <div class="p-12 hover:bg-background transition-colors group">
+                <span class="text-[10px] font-bold text-tertiary uppercase tracking-widest mb-4 block">Module 01</span>
+                <h3 class="text-xl font-bold mb-4 uppercase tracking-tight">Intake &amp; Glucose Logging</h3>
+                <p class="text-secondary text-sm leading-relaxed mb-8">
+                    Simultaneous tracking of food intake alongside real-time blood sugar telemetry. Identify correlations instantly.
+                </p>
+                <div class="h-[2px] w-12 bg-outline group-hover:bg-primary transition-all"></div>
+            </div>
+            <div class="p-12 hover:bg-background transition-colors group">
+                <span class="text-[10px] font-bold text-tertiary uppercase tracking-widest mb-4 block">Module 02</span>
+                <h3 class="text-xl font-bold mb-4 uppercase tracking-tight">Deficiency Radar</h3>
+                <p class="text-secondary text-sm leading-relaxed mb-8">
+                    Advanced nutrient surveillance scanning for micro-deficiencies with real-time visual alerts and risk profiling.
+                </p>
+                <div class="h-[2px] w-12 bg-outline group-hover:bg-primary transition-all"></div>
+            </div>
+            <div class="p-12 hover:bg-background transition-colors group">
+                <span class="text-[10px] font-bold text-tertiary uppercase tracking-widest mb-4 block">Module 03</span>
+                <h3 class="text-xl font-bold mb-4 uppercase tracking-tight">Post-Log Insights</h3>
+                <p class="text-secondary text-sm leading-relaxed mb-8">
+                    Immediate visualization of blood sugar fluctuations post-prandial. Understand your metabolic response to every meal.
+                </p>
+                <div class="h-[2px] w-12 bg-outline group-hover:bg-primary transition-all"></div>
+            </div>
+        </div>
+
+        <!-- Section 2: Features (4-6) -->
+        <div class="max-w-[1600px] mx-auto grid md:grid-cols-3 divide-x divide-outline">
+            <div class="p-12 hover:bg-background transition-colors group">
+                <span class="text-[10px] font-bold text-tertiary uppercase tracking-widest mb-4 block">Module 04</span>
+                <h3 class="text-xl font-bold mb-4 uppercase tracking-tight">Nutrient Suggestions</h3>
+                <p class="text-secondary text-sm leading-relaxed mb-8">
+                    Algorithmic food recommendations specifically engineered to neutralize identified nutrient gaps in your profile.
+                </p>
+                <div class="h-[2px] w-12 bg-outline group-hover:bg-primary transition-all"></div>
+            </div>
+            <div class="p-12 hover:bg-background transition-colors group">
+                <span class="text-[10px] font-bold text-tertiary uppercase tracking-widest mb-4 block">Module 05</span>
+                <h3 class="text-xl font-bold mb-4 uppercase tracking-tight">Goal-Aligned Plans</h3>
+                <p class="text-secondary text-sm leading-relaxed mb-8">
+                    Precision meal strategies tailored for weight loss, muscle gain, or cognitive maintenance through metabolic stability.
+                </p>
+                <div class="h-[2px] w-12 bg-outline group-hover:bg-primary transition-all"></div>
+            </div>
+            <div class="p-12 hover:bg-background transition-colors group">
+                <span class="text-[10px] font-bold text-tertiary uppercase tracking-widest mb-4 block">Module 06</span>
+                <h3 class="text-xl font-bold mb-4 uppercase tracking-tight">Historical Ledger</h3>
+                <p class="text-secondary text-sm leading-relaxed mb-8">
+                    A high-fidelity audit trail documenting every nutrient intake and glucose data point for longitudinal analysis.
+                </p>
+                <div class="h-[2px] w-12 bg-outline group-hover:bg-primary transition-all"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Performance Matrix -->
+    <section class="py-32 px-6 max-w-5xl mx-auto">
+        <div class="text-center mb-20">
+            <span class="text-[10px] font-bold uppercase tracking-[0.3em] text-secondary mb-4 block">Metabolic Benchmarks</span>
+            <h2 class="text-[3rem] font-extrabold tracking-tight uppercase leading-none mb-6">Performance Delta</h2>
+            <p class="text-secondary text-lg max-w-2xl mx-auto font-medium">
+                Standard nutrition apps provide surface-level data. SuperU integrates deep metabolic markers for professional health management.
+            </p>
+        </div>
+        <div class="border border-outline bg-surface overflow-hidden">
+            <table class="w-full text-left border-collapse">
+                <thead>
+                    <tr class="bg-surface-variant/50 border-b border-outline">
+                        <th class="p-5 text-[10px] font-extrabold uppercase tracking-widest text-secondary">Diagnostic Layer</th>
+                        <th class="p-5 text-[10px] font-extrabold uppercase tracking-widest text-secondary text-center">Legacy Apps</th>
+                        <th class="p-5 text-[10px] font-extrabold uppercase tracking-widest text-primary text-right">SuperU Terminal</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-outline">
+                    <tr class="hover:bg-background/50 transition-colors">
+                        <td class="p-6 font-bold text-xs uppercase tracking-tight">Glucose Integration</td>
+                        <td class="p-6 text-[11px] text-secondary text-center font-mono">MANUAL_ENTRY_ONLY</td>
+                        <td class="p-6 text-[11px] text-tertiary text-right font-mono font-bold">REAL_TIME_CGM_SYNC</td>
+                    </tr>
+                    <tr class="hover:bg-background/50 transition-colors">
+                        <td class="p-6 font-bold text-xs uppercase tracking-tight">Nutrient Density</td>
+                        <td class="p-6 text-[11px] text-secondary text-center font-mono">BASIC_MACROS</td>
+                        <td class="p-6 text-[11px] text-tertiary text-right font-mono font-bold">MICRO_AUDIT_ACTIVE</td>
+                    </tr>
+                    <tr class="hover:bg-background/50 transition-colors">
+                        <td class="p-6 font-bold text-xs uppercase tracking-tight">Prediction Model</td>
+                        <td class="p-6 text-[11px] text-secondary text-center font-mono">NON_PREDICTIVE</td>
+                        <td class="p-6 text-[11px] text-tertiary text-right font-mono font-bold">INSULIN_CURVE_PROJECTION</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Section 4: Progression Architecture -->
+    <section class="bg-primary text-on-primary py-32 px-6">
+        <div class="max-w-[1600px] mx-auto grid lg:grid-cols-2 gap-24 items-center">
+            <div class="order-2 lg:order-1">
+                <div class="bg-on-primary border-[2px] border-on-primary p-10 relative shadow-[10px_10px_0_rgba(0,0,0,0.1)]">
+                    <div class="absolute top-4 right-6">
+                        <span class="text-[9px] font-mono text-secondary uppercase">METABOLIC_STATE: STABLE</span>
+                    </div>
+                    <div class="space-y-10">
+                        <div class="flex items-center gap-6">
+                            <div class="h-14 w-14 bg-background flex items-center justify-center border border-outline">
+                                <span class="material-symbols-outlined text-primary scale-125">analytics</span>
+                            </div>
+                            <div>
+                                <div class="text-[9px] font-bold text-secondary uppercase tracking-[0.2em]">Cycle 01</div>
+                                <div class="text-xl font-extrabold uppercase">Glucose Neutrality</div>
+                            </div>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="flex justify-between text-[10px] font-bold uppercase tracking-widest">
+                                <span>Optimization Score</span>
+                                <span>92%</span>
+                            </div>
+                            <div class="h-4 w-full bg-surface border border-outline p-0.5">
+                                <div class="h-full w-[92%] bg-primary"></div>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-2 gap-6">
+                            <div class="border border-outline p-5 bg-surface/50">
+                                <div class="text-[9px] font-bold text-secondary uppercase mb-2">Stability_Hrs</div>
+                                <div class="text-3xl font-black font-mono">18.42</div>
+                            </div>
+                            <div class="border border-outline p-5 bg-surface/50">
+                                <div class="text-[9px] font-bold text-secondary uppercase mb-2">Nutrient_Idx</div>
+                                <div class="text-3xl font-black font-mono">A++</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="order-1 lg:order-2">
+                <span class="text-[10px] font-bold uppercase tracking-[0.3em] text-surface-variant mb-4 block">Bio-Gamification</span>
+                <h2 class="text-[3.5rem] font-black leading-[0.9] tracking-tighter uppercase mb-8">Master Your<br/>Biology.</h2>
+                <p class="text-on-primary/80 text-lg leading-relaxed mb-10 font-medium">
+                    Health isn't a destination—it's a performance metric. SuperU transforms nutritional data into a strategic progression system. Unlock new tiers of biological performance.
+                </p>
+                <ul class="space-y-6">
+                    <li class="flex items-center gap-4">
+                        <span class="w-1.5 h-1.5 bg-on-primary"></span>
+                        <span class="text-sm font-bold uppercase tracking-wide">Real-time glucose response leveling</span>
+                    </li>
+                    <li class="flex items-center gap-4">
+                        <span class="w-1.5 h-1.5 bg-on-primary"></span>
+                        <span class="text-sm font-bold uppercase tracking-wide">Nutrient density milestone rewards</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA / Pricing -->
+    <section class="py-32 px-6 bg-background">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-[3.5rem] font-black tracking-tighter mb-16 uppercase italic">Select Access Tier</h2>
+            <div class="grid md:grid-cols-2 gap-1 mb-16 border border-outline bg-outline">
+                <!-- Monthly -->
+                <div class="p-12 bg-background hover:bg-surface transition-colors cursor-pointer group">
+                    <div class="text-[10px] font-bold text-secondary uppercase tracking-[0.2em] mb-4">Contract: Core</div>
+                    <div class="text-6xl font-black mb-8">$3.00</div>
+                    <button class="w-full py-4 border-2 border-primary text-[11px] font-extrabold uppercase tracking-[0.2em] group-hover:bg-primary group-hover:text-on-primary transition-all">Initialize</button>
+                </div>
+                <!-- Yearly -->
+                <div class="p-12 bg-surface relative overflow-hidden group cursor-pointer border-t md:border-t-0 md:border-l border-outline">
+                    <div class="absolute top-4 right-[-35px] bg-tertiary text-on-primary text-[9px] font-bold py-1 px-10 rotate-45 uppercase tracking-widest">Optimal Value</div>
+                    <div class="text-[10px] font-bold text-tertiary uppercase tracking-[0.2em] mb-4">Contract: Perpetual</div>
+                    <div class="text-6xl font-black mb-2">$24.00</div>
+                    <div class="text-[10px] font-mono text-secondary mb-8">$0.06 / CYCLE_AVG</div>
+                    <button class="w-full py-4 bg-primary text-on-primary text-[11px] font-extrabold uppercase tracking-[0.2em] hover:bg-secondary transition-all">Activate Suite</button>
+                </div>
+            </div>
+            <div class="flex flex-col items-center gap-8">
+                <div class="flex gap-2">
+                    <div class="border border-outline px-6 py-2 flex items-center gap-4 cursor-pointer hover:bg-surface">
+                        <span class="material-symbols-outlined text-primary">app_shortcut</span>
+                        <div class="text-left leading-none">
+                            <div class="text-[8px] font-bold uppercase text-secondary">Download SuperU</div>
+                            <div class="text-[12px] font-extrabold uppercase">IOS_DEPLOY</div>
+                        </div>
+                    </div>
+                    <div class="border border-outline px-6 py-2 flex items-center gap-4 cursor-pointer hover:bg-surface">
+                        <span class="material-symbols-outlined text-primary">robot_2</span>
+                        <div class="text-left leading-none">
+                            <div class="text-[8px] font-bold uppercase text-secondary">Download SuperU</div>
+                            <div class="text-[12px] font-extrabold uppercase">APK_DEPLOY</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-background border-t border-outline">
+        <div class="flex flex-col md:flex-row justify-between items-center px-6 py-12 max-w-[1600px] mx-auto gap-8">
+            <div>
+                <div class="text-sm font-black tracking-[0.2em] mb-3">SUPERU</div>
+                <div class="text-[9px] uppercase tracking-widest text-secondary font-medium">
+                    © 2024 SUPERU. METABOLIC ARCHITECT SYSTEMS. ALL DATA ENCRYPTED.
+                </div>
+            </div>
+            <div class="flex flex-wrap justify-center gap-8">
+                <a class="text-[10px] font-bold uppercase tracking-widest text-secondary hover:text-primary transition-colors" href="#">Privacy_Layer</a>
+                <a class="text-[10px] font-bold uppercase tracking-widest text-secondary hover:text-primary transition-colors" href="#">Terms_Execute</a>
+                <a class="text-[10px] font-bold uppercase tracking-widest text-secondary hover:text-primary transition-colors" href="#">Security_V2</a>
+                <a class="text-[10px] font-bold uppercase tracking-widest text-secondary hover:text-primary transition-colors" href="#">API_Endpoint</a>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
