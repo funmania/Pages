@@ -3,10 +3,11 @@
 <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>SuperYou | Bio-Performance Terminal</title>
+    <title>SuperYou | Precision Nutrition — From First Bite to Full Picture</title>
+    <meta name="description" content="SuperYou tracks 58+ nutrients with AI-powered meal plans, blood sugar prediction, and real-time deficiency detection. Your complete nutrition companion."/>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
     <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
@@ -16,12 +17,12 @@
                         "primary": "#ffffff",
                         "on-primary": "#000000",
                         "background": "#0a0a0a",
-                        "surface": "#121212",
-                        "surface-variant": "#1e1e1e",
-                        "outline": "#2a2a2a",
+                        "surface": "#141416",
+                        "surface-variant": "#1f1f23",
+                        "outline": "#2a2c2e",
                         "outline-variant": "#3f3f3f",
                         "secondary": "#d1d1d1",
-                        "tertiary": "#22c55e",
+                        "tertiary": "#34d399",
                         "error": "#ef4444",
                     },
                     fontFamily: {
@@ -29,7 +30,7 @@
                         "body": ["Manrope", "sans-serif"],
                         "label": ["Manrope", "sans-serif"]
                     },
-                    borderRadius: {"DEFAULT": "0px", "lg": "2px", "xl": "4px", "full": "9999px"},
+                    borderRadius: {"DEFAULT": "4px", "lg": "8px", "xl": "12px", "full": "9999px"},
                 },
             },
         }
@@ -37,191 +38,441 @@
     <style>
         .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
         body { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; letter-spacing: -0.01em; }
-        .technical-grid { background-image: radial-gradient(circle, #2a2a2a 1px, transparent 1px); background-size: 32px 32px; }
-        .scanline { background: linear-gradient(to bottom, transparent 50%, rgba(255,255,255,0.02) 50%); background-size: 100% 4px; }
+        .technical-grid { background-image: radial-gradient(circle, #2a2c2e 1px, transparent 1px); background-size: 32px 32px; }
+        .phase-number { font-size: clamp(6rem, 15vw, 12rem); font-weight: 900; line-height: 1; color: rgba(52, 211, 153, 0.06); position: absolute; top: -1rem; right: -0.5rem; pointer-events: none; user-select: none; }
+        .device-frame { border: 2px solid #2a2c2e; border-radius: 8px; overflow: hidden; }
+        .device-frame img { display: block; width: 100%; height: auto; }
     </style>
 </head>
-<body class="bg-background text-primary font-body selection:bg-primary selection:text-on-primary">
-    <!-- TopNavBar -->
+<body class="bg-background text-primary font-body selection:bg-tertiary selection:text-on-primary">
+    <!-- Navigation -->
     <nav class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-outline">
         <div class="flex justify-between items-center px-4 sm:px-6 py-3 max-w-[1600px] mx-auto">
-            <div class="flex items-center gap-8">
-                <div class="text-sm font-extrabold tracking-[0.2em] flex items-center gap-2">
-                    <span class="w-2 h-2 bg-tertiary"></span>
-                    SuperYou
-                </div>
-            </div>
+            <a href="#" class="text-sm font-extrabold tracking-[0.2em] flex items-center gap-2">
+                <span class="w-2 h-2 bg-tertiary rounded-full"></span>
+                SuperYou
+            </a>
             <div class="flex items-center gap-4">
+                <a href="https://apps.apple.com/in/app/superyou-dominate-your-day/id6761914195" target="_blank" class="hidden sm:flex items-center gap-2 text-[11px] font-bold uppercase tracking-widest text-secondary hover:text-primary transition-colors">
+                    <span class="material-symbols-outlined text-lg">app_shortcut</span>
+                    App Store
+                </a>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero -->
     <section class="pt-24 sm:pt-32 pb-16 sm:pb-24 px-4 sm:px-6 max-w-[1600px] mx-auto technical-grid">
         <div class="grid lg:grid-cols-12 gap-8 sm:gap-12 items-center">
             <div class="lg:col-span-5">
-                <div class="inline-flex items-center gap-2 px-2 py-1 border border-outline bg-surface mb-6 sm:mb-8">
-                    <span class="text-[10px] font-bold uppercase tracking-widest text-secondary">Integrated Nutrition &amp; Glucose</span>
-                    <span class="w-1 h-1 rounded-full bg-tertiary animate-pulse"></span>
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 border border-outline bg-surface rounded-lg mb-6 sm:mb-8">
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-secondary">58+ Nutrients &middot; AI Recipes &middot; Blood Sugar Prediction</span>
+                    <span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse"></span>
                 </div>
                 <h1 class="font-headline text-[2.5rem] sm:text-[3rem] lg:text-[4rem] font-extrabold leading-[0.95] tracking-tighter mb-6 sm:mb-8 uppercase">
-                    Optimization<br/>Engine.
+                    Precision<br/>Nutrition.<br/><span class="text-tertiary">From First Bite<br/>to Full Picture.</span>
                 </h1>
-                <p class="text-secondary text-base sm:text-lg max-w-md mb-8 sm:mb-12 leading-relaxed font-medium">
-                    SuperYou: The high-fidelity interface for precision nutrition tracking. Real-time nutrient monitoring meets clinical-grade deficiency detection.
+                <p class="text-secondary text-base sm:text-lg max-w-lg mb-8 sm:mb-12 leading-relaxed">
+                    SuperYou is your complete nutrition companion. Personalized onboarding, real-time tracking across 58+ nutrients, AI-powered meal plans, and blood sugar prediction.
                 </p>
+                <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                    <a href="https://apps.apple.com/in/app/superyou-dominate-your-day/id6761914195" target="_blank" class="border border-tertiary/40 bg-tertiary/10 px-6 sm:px-8 py-4 sm:py-5 flex items-center gap-4 cursor-pointer hover:bg-tertiary/20 transition-colors rounded-lg">
+                        <span class="material-symbols-outlined text-tertiary text-2xl sm:text-3xl">app_shortcut</span>
+                        <div class="text-left leading-none">
+                            <div class="text-[10px] sm:text-[11px] font-bold uppercase text-secondary">Download SuperYou</div>
+                            <div class="text-[14px] sm:text-[16px] font-extrabold uppercase text-tertiary">App Store</div>
+                        </div>
+                    </a>
+                    <a href="#journey" class="text-[11px] font-bold uppercase tracking-widest text-secondary hover:text-primary transition-colors flex items-center gap-2">
+                        See the journey
+                        <span class="material-symbols-outlined text-sm">arrow_downward</span>
+                    </a>
+                </div>
             </div>
             <div class="lg:col-span-7 flex justify-center lg:justify-end">
-                <a href="https://apps.apple.com/in/app/superyou-dominate-your-day/id6761914195" target="_blank" class="border border-outline px-6 sm:px-8 py-4 sm:py-5 flex items-center gap-4 cursor-pointer hover:bg-surface transition-colors bg-background/50">
-                    <span class="material-symbols-outlined text-primary text-2xl sm:text-3xl">app_shortcut</span>
-                    <div class="text-left leading-none">
-                        <div class="text-[10px] sm:text-[11px] font-bold uppercase text-secondary">Download SuperYou</div>
-                        <div class="text-[14px] sm:text-[16px] font-extrabold uppercase">APP STORE</div>
+                <div class="device-frame w-full max-w-none">
+                    <img src="Images/promo-chatgpt.png" alt="SuperYou App Preview" class="w-full"/>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lifecycle Journey -->
+    <div id="journey" class="border-t border-outline"></div>
+
+    <!-- Phase 1: Know You -->
+    <section class="py-16 sm:py-24 px-4 sm:px-6 max-w-[1600px] mx-auto">
+        <div class="grid lg:grid-cols-12 gap-8 sm:gap-12 items-center">
+            <div class="lg:col-span-5 relative">
+                <span class="phase-number">01</span>
+                <div class="relative z-10">
+                    <span class="text-[10px] font-bold uppercase tracking-[0.3em] text-tertiary mb-3 block">Phase 01 — Personalize</span>
+                    <h2 class="text-[2rem] sm:text-[2.5rem] font-extrabold leading-[0.95] tracking-tighter uppercase mb-4 sm:mb-6">Know You.</h2>
+                    <p class="text-secondary text-base sm:text-lg leading-relaxed mb-6 sm:mb-8">
+                        A 12-step health assessment builds your unique nutritional baseline. Age, gender, activity level, dietary restrictions, health conditions — all calibrated to calculate your precise Daily Reference Intakes.
+                    </p>
+                    <div class="grid grid-cols-2 gap-3 sm:gap-4 mb-6">
+                        <div class="bg-surface border border-outline rounded-lg p-3 sm:p-4">
+                            <div class="text-tertiary text-xl sm:text-2xl font-extrabold mb-1">10</div>
+                            <div class="text-secondary text-[11px] font-bold uppercase tracking-wide">Demographic Profiles</div>
+                        </div>
+                        <div class="bg-surface border border-outline rounded-lg p-3 sm:p-4">
+                            <div class="text-tertiary text-xl sm:text-2xl font-extrabold mb-1">8+</div>
+                            <div class="text-secondary text-[11px] font-bold uppercase tracking-wide">Allergy Filters</div>
+                        </div>
+                        <div class="bg-surface border border-outline rounded-lg p-3 sm:p-4">
+                            <div class="text-tertiary text-xl sm:text-2xl font-extrabold mb-1">5</div>
+                            <div class="text-secondary text-[11px] font-bold uppercase tracking-wide">Health Adjustments</div>
+                        </div>
+                        <div class="bg-surface border border-outline rounded-lg p-3 sm:p-4">
+                            <div class="text-tertiary text-xl sm:text-2xl font-extrabold mb-1">6</div>
+                            <div class="text-secondary text-[11px] font-bold uppercase tracking-wide">Habit Modifiers</div>
+                        </div>
                     </div>
-                </a>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-3">
+                            <span class="w-1.5 h-1.5 bg-tertiary rounded-full mt-1.5 flex-shrink-0"></span>
+                            <span class="text-secondary text-sm leading-relaxed">Personalized DRI based on Mifflin-St Jeor equation, pregnancy status, and lifestyle</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="w-1.5 h-1.5 bg-tertiary rounded-full mt-1.5 flex-shrink-0"></span>
+                            <span class="text-secondary text-sm leading-relaxed">Adjustments for smoking, alcohol, caffeine, stress, and sun exposure</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="w-1.5 h-1.5 bg-tertiary rounded-full mt-1.5 flex-shrink-0"></span>
+                            <span class="text-secondary text-sm leading-relaxed">Regional food intelligence with 130+ South Asian ingredient translations</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="lg:col-span-7 flex justify-center">
+                <div class="device-frame w-full max-w-none">
+                    <img src="Images/promo-design.png" alt="Personalized Onboarding" class="w-full"/>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Section 2: Features (1-3) -->
-    <section class="border-y border-outline bg-surface">
-        <div class="max-w-[1600px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-outline border-b border-outline">
-            <div class="p-6 sm:p-8 lg:p-12 hover:bg-background transition-colors group">
-                <h3 class="text-lg sm:text-xl font-bold mb-3 sm:mb-4 uppercase tracking-tight">Nutritional Tracking</h3>
-                <img src="Images/BloodSugarTracking.jpeg" alt="Nutritional Tracking" class="w-full mb-4 grayscale opacity-90"/>
-                <p class="text-secondary text-sm leading-relaxed mb-6 sm:mb-8">
-                    Simultaneous tracking of food intake alongside real-time nutritional analysis. Identify patterns instantly.
-                </p>
-                <div class="h-[2px] w-12 bg-outline group-hover:bg-primary transition-all"></div>
-            </div>
-            <div class="p-6 sm:p-8 lg:p-12 hover:bg-background transition-colors group">
-                <h3 class="text-lg sm:text-xl font-bold mb-3 sm:mb-4 uppercase tracking-tight">Deficiency Radar</h3>
-                <img src="Images/DeficiencyRadar.jpeg" alt="Deficiency Radar" class="w-full mb-4 grayscale opacity-90"/>
-                <p class="text-secondary text-sm leading-relaxed mb-6 sm:mb-8">
-                    Advanced nutrient surveillance scanning for micro-deficiencies with real-time visual alerts and risk profiling.
-                </p>
-                <div class="h-[2px] w-12 bg-outline group-hover:bg-primary transition-all"></div>
-            </div>
-            <div class="p-6 sm:p-8 lg:p-12 hover:bg-background transition-colors group">
-                <h3 class="text-lg sm:text-xl font-bold mb-3 sm:mb-4 uppercase tracking-tight">Post-Log Insights</h3>
-                <img src="Images/Insights.jpeg" alt="Insights" class="w-full mb-4 grayscale opacity-90"/>
-                <img src="Images/MacroMicroTracking.png" alt="Macro Micro Tracking" class="w-full mb-4 grayscale opacity-90"/>
-                <p class="text-secondary text-sm leading-relaxed mb-6 sm:mb-8">
-                    Immediate visualization of nutrient intake after meals. Track how your body responds to different foods with detailed breakdowns.
-                </p>
-                <div class="h-[2px] w-12 bg-outline group-hover:bg-primary transition-all"></div>
-            </div>
-        </div>
+    <div class="max-w-[1600px] mx-auto px-4 sm:px-6"><div class="border-t border-outline"></div></div>
 
-        <!-- Section 2: Features (4-6) -->
-        <div class="max-w-[1600px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-outline">
-            <div class="p-6 sm:p-8 lg:p-12 hover:bg-background transition-colors group">
-                <h3 class="text-lg sm:text-xl font-bold mb-3 sm:mb-4 uppercase tracking-tight">Nutrient Suggestions</h3>
-                <p class="text-secondary text-sm leading-relaxed mb-6 sm:mb-8">
-                    Algorithmic food recommendations specifically engineered to neutralize identified nutrient gaps in your profile.
-                </p>
-                <div class="h-[2px] w-12 bg-outline group-hover:bg-primary transition-all"></div>
+    <!-- Phase 2: Track Everything -->
+    <section class="py-16 sm:py-24 px-4 sm:px-6 max-w-[1600px] mx-auto">
+        <div class="grid lg:grid-cols-12 gap-8 sm:gap-12 items-center">
+            <div class="lg:col-span-7 order-2 lg:order-1 flex justify-center">
+                <div class="grid grid-cols-2 gap-3 sm:gap-4 w-full max-w-2xl">
+                    <div class="device-frame">
+                        <img src="Images/track-daily-iphone.png" alt="Daily Nutrient Tracking" class="w-full"/>
+                    </div>
+                    <div class="device-frame">
+                        <img src="Images/track-nutrients-iphone.png" alt="Smart Suggestions" class="w-full"/>
+                    </div>
+                    <div class="device-frame col-span-2">
+                        <img src="Images/smart-logging-ipad.png" alt="Smart Meal Logging" class="w-full"/>
+                    </div>
+                </div>
             </div>
-            <div class="p-6 sm:p-8 lg:p-12 hover:bg-background transition-colors group">
-                <h3 class="text-lg sm:text-xl font-bold mb-3 sm:mb-4 uppercase tracking-tight">Goal-Aligned Plans</h3>
-                <p class="text-secondary text-sm leading-relaxed mb-6 sm:mb-8">
-                    Precision meal strategies tailored for weight loss, muscle gain, or overall health through optimal nutrient balance.
-                </p>
-                <div class="h-[2px] w-12 bg-outline group-hover:bg-primary transition-all"></div>
-            </div>
-            <div class="p-6 sm:p-8 lg:p-12 hover:bg-background transition-colors group">
-                <h3 class="text-lg sm:text-xl font-bold mb-3 sm:mb-4 uppercase tracking-tight">Historical Ledger</h3>
-                <img src="Images/HistoricalLedger.png" alt="Historical Ledger" class="w-full mb-4 grayscale opacity-90"/>
-                <p class="text-secondary text-sm leading-relaxed mb-6 sm:mb-8">
-                    A high-fidelity audit trail documenting every nutrient intake and dietary data point for longitudinal analysis.
-                </p>
-                <div class="h-[2px] w-12 bg-outline group-hover:bg-primary transition-all"></div>
+            <div class="lg:col-span-5 relative order-1 lg:order-2">
+                <span class="phase-number">02</span>
+                <div class="relative z-10">
+                    <span class="text-[10px] font-bold uppercase tracking-[0.3em] text-tertiary mb-3 block">Phase 02 — Log & Track</span>
+                    <h2 class="text-[2rem] sm:text-[2.5rem] font-extrabold leading-[0.95] tracking-tighter uppercase mb-4 sm:mb-6">Track<br/>Everything.</h2>
+                    <p class="text-secondary text-base sm:text-lg leading-relaxed mb-6 sm:mb-8">
+                        Log meals with natural language. Type how you speak — fractions, units, and regional food names are all understood. 58+ nutrients tracked in real-time — from macros to amino acids, omega-3s to trace minerals.
+                    </p>
+                    <div class="bg-surface border border-outline rounded-lg p-4 sm:p-5 mb-6">
+                        <div class="text-tertiary text-3xl sm:text-4xl font-extrabold mb-2">58+</div>
+                        <div class="text-primary text-sm font-bold uppercase tracking-wide mb-3">Nutrients Tracked</div>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-surface-variant px-2 py-1 rounded">Amino Acids</span>
+                            <span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-surface-variant px-2 py-1 rounded">Omega-3/6</span>
+                            <span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-surface-variant px-2 py-1 rounded">Vitamins A-K</span>
+                            <span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-surface-variant px-2 py-1 rounded">B-Complex</span>
+                            <span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-surface-variant px-2 py-1 rounded">Trace Minerals</span>
+                            <span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-surface-variant px-2 py-1 rounded">Antioxidants</span>
+                            <span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-surface-variant px-2 py-1 rounded">Choline</span>
+                            <span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-surface-variant px-2 py-1 rounded">Caffeine</span>
+                        </div>
+                    </div>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-3">
+                            <span class="w-1.5 h-1.5 bg-tertiary rounded-full mt-1.5 flex-shrink-0"></span>
+                            <span class="text-secondary text-sm leading-relaxed">Natural language food parsing — type how you speak</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="w-1.5 h-1.5 bg-tertiary rounded-full mt-1.5 flex-shrink-0"></span>
+                            <span class="text-secondary text-sm leading-relaxed">AI resolves ambiguous foods to comprehensive nutrition database entries</span>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Section 3: Performance Matrix -->
+    <div class="max-w-[1600px] mx-auto px-4 sm:px-6"><div class="border-t border-outline"></div></div>
+
+    <!-- Phase 3: See Clearly -->
+    <section class="py-16 sm:py-24 px-4 sm:px-6 max-w-[1600px] mx-auto">
+        <div class="grid lg:grid-cols-12 gap-8 sm:gap-12 items-center">
+            <div class="lg:col-span-5 relative">
+                <span class="phase-number">03</span>
+                <div class="relative z-10">
+                    <span class="text-[10px] font-bold uppercase tracking-[0.3em] text-tertiary mb-3 block">Phase 03 — Analyze</span>
+                    <h2 class="text-[2rem] sm:text-[2.5rem] font-extrabold leading-[0.95] tracking-tighter uppercase mb-4 sm:mb-6">See<br/>Clearly.</h2>
+                    <p class="text-secondary text-base sm:text-lg leading-relaxed mb-6 sm:mb-8">
+                        Instant post-log analysis reveals exactly what you consumed. Blood sugar prediction models 4-hour glucose curves. The deficiency radar spots nutrient gaps before they become problems.
+                    </p>
+                    <div class="space-y-3 mb-6">
+                        <div class="bg-surface border border-outline rounded-lg p-4 flex items-start gap-4">
+                            <div class="text-tertiary text-lg font-light material-symbols-outlined flex-shrink-0">monitoring</div>
+                            <div>
+                                <div class="text-sm font-bold mb-1">Blood Sugar Prediction</div>
+                                <div class="text-secondary text-[13px] leading-relaxed">4-hour glucose curve using Gamma absorption modeling. Personalized for diabetes, age, and activity level.</div>
+                            </div>
+                        </div>
+                        <div class="bg-surface border border-outline rounded-lg p-4 flex items-start gap-4">
+                            <div class="text-tertiary text-lg font-light material-symbols-outlined flex-shrink-0">radar</div>
+                            <div>
+                                <div class="text-sm font-bold mb-1">Deficiency Radar</div>
+                                <div class="text-secondary text-[13px] leading-relaxed">Real-time nutrient surveillance with severity-based warnings: Monitoring, Warning, and High Risk.</div>
+                            </div>
+                        </div>
+                        <div class="bg-surface border border-outline rounded-lg p-4 flex items-start gap-4">
+                            <div class="text-tertiary text-lg font-light material-symbols-outlined flex-shrink-0">insights</div>
+                            <div>
+                                <div class="text-sm font-bold mb-1">Post-Log Analysis</div>
+                                <div class="text-secondary text-[13px] leading-relaxed">Immediate macro and micro breakdowns after every meal. See how your body responds to different foods.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="lg:col-span-7 flex justify-center">
+                <div class="grid grid-cols-2 gap-3 sm:gap-4 w-full max-w-2xl">
+                    <div class="device-frame">
+                        <img src="Images/insights-iphone.png" alt="Real-time Insights" class="w-full"/>
+                    </div>
+                    <div class="device-frame">
+                        <img src="Images/track-nutrients-iphone.png" alt="Smart Nutrient Suggestions" class="w-full"/>
+                    </div>
+                    <div class="device-frame col-span-2">
+                        <img src="Images/insights-ipad.png" alt="Real-time Nutrition Insights" class="w-full"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="max-w-[1600px] mx-auto px-4 sm:px-6"><div class="border-t border-outline"></div></div>
+
+    <!-- Phase 4: Eat Smarter -->
+    <section class="py-16 sm:py-24 px-4 sm:px-6 max-w-[1600px] mx-auto">
+        <div class="grid lg:grid-cols-12 gap-8 sm:gap-12 items-center">
+            <div class="lg:col-span-7 order-2 lg:order-1 flex justify-center">
+                <div class="grid grid-cols-2 gap-3 sm:gap-4 w-full max-w-2xl">
+                    <div class="device-frame">
+                        <img src="Images/suggestions-iphone.png" alt="Meal Suggestions" class="w-full"/>
+                    </div>
+                    <div class="device-frame">
+                        <img src="Images/custom-meal-iphone.png" alt="Custom Meal Tracking" class="w-full"/>
+                    </div>
+                    <div class="device-frame col-span-2">
+                        <img src="Images/suggestions-ipad.png" alt="Personalized Meal Suggestions" class="w-full"/>
+                    </div>
+                </div>
+            </div>
+            <div class="lg:col-span-5 relative order-1 lg:order-2">
+                <span class="phase-number">04</span>
+                <div class="relative z-10">
+                    <span class="text-[10px] font-bold uppercase tracking-[0.3em] text-tertiary mb-3 block">Phase 04 — Suggest & Plan</span>
+                    <h2 class="text-[2rem] sm:text-[2.5rem] font-extrabold leading-[0.95] tracking-tighter uppercase mb-4 sm:mb-6">Eat<br/>Smarter.</h2>
+                    <p class="text-secondary text-base sm:text-lg leading-relaxed mb-6 sm:mb-8">
+                        AI generates up to 12 meal plans optimized specifically for YOUR nutrient gaps. Personalized recipes created from your selected ingredients. Smart grocery lists fill what's missing.
+                    </p>
+                    <div class="bg-surface border border-outline rounded-lg p-4 sm:p-5 mb-6">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="material-symbols-outlined text-tertiary">auto_awesome</span>
+                            <span class="text-sm font-bold uppercase tracking-wide">AI Engine</span>
+                        </div>
+                        <p class="text-secondary text-[13px] leading-relaxed mb-3">AI-powered recipe generation, food resolution, and semantic search.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-surface-variant px-2 py-1 rounded">Recipe Generation</span>
+                            <span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-surface-variant px-2 py-1 rounded">Food Resolution</span>
+                            <span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-surface-variant px-2 py-1 rounded">Semantic Search</span>
+                        </div>
+                    </div>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-3">
+                            <span class="w-1.5 h-1.5 bg-tertiary rounded-full mt-1.5 flex-shrink-0"></span>
+                            <span class="text-secondary text-sm leading-relaxed">12 simultaneous meal plans prioritized for your nutrient gaps per calorie budget</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="w-1.5 h-1.5 bg-tertiary rounded-full mt-1.5 flex-shrink-0"></span>
+                            <span class="text-secondary text-sm leading-relaxed">Respects your allergies, diet style, and disliked foods automatically</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="w-1.5 h-1.5 bg-tertiary rounded-full mt-1.5 flex-shrink-0"></span>
+                            <span class="text-secondary text-sm leading-relaxed">Curated grocery lists that close nutrient gaps, not just ingredient lists</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="max-w-[1600px] mx-auto px-4 sm:px-6"><div class="border-t border-outline"></div></div>
+
+    <!-- Phase 5: Stay Consistent -->
+    <section class="py-16 sm:py-24 px-4 sm:px-6 max-w-[1600px] mx-auto">
+        <div class="grid lg:grid-cols-12 gap-8 sm:gap-12 items-center">
+            <div class="lg:col-span-5 relative">
+                <span class="phase-number">05</span>
+                <div class="relative z-10">
+                    <span class="text-[10px] font-bold uppercase tracking-[0.3em] text-tertiary mb-3 block">Phase 05 — Achieve & Maintain</span>
+                    <h2 class="text-[2rem] sm:text-[2.5rem] font-extrabold leading-[0.95] tracking-tighter uppercase mb-4 sm:mb-6">Stay<br/>Consistent.</h2>
+                    <p class="text-secondary text-base sm:text-lg leading-relaxed mb-6 sm:mb-8">
+                        Gamified daily nutrition scores build lasting habits. Track streaks, hit milestones, and maintain a complete historical ledger of every meal and nutrient trend.
+                    </p>
+                    <div class="grid grid-cols-3 gap-3 mb-6">
+                        <div class="bg-surface border border-outline rounded-lg p-3 sm:p-4 text-center">
+                            <div class="text-tertiary text-lg sm:text-xl font-extrabold mb-1">0–100</div>
+                            <div class="text-secondary text-[10px] font-bold uppercase tracking-wide">Daily Score</div>
+                        </div>
+                        <div class="bg-surface border border-outline rounded-lg p-3 sm:p-4 text-center">
+                            <div class="text-tertiary text-lg sm:text-xl font-extrabold mb-1">100d</div>
+                            <div class="text-secondary text-[10px] font-bold uppercase tracking-wide">Streak Max</div>
+                        </div>
+                        <div class="bg-surface border border-outline rounded-lg p-3 sm:p-4 text-center">
+                            <div class="text-tertiary text-lg sm:text-xl font-extrabold mb-1">6</div>
+                            <div class="text-secondary text-[10px] font-bold uppercase tracking-wide">Key Nutrients</div>
+                        </div>
+                    </div>
+                    <div class="bg-surface border border-outline rounded-lg p-4 mb-6">
+                        <div class="text-sm font-bold mb-3">Daily Score Powered By</div>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-[10px] font-bold uppercase tracking-wider text-tertiary bg-tertiary/10 border border-tertiary/20 px-2 py-1 rounded">Protein</span>
+                            <span class="text-[10px] font-bold uppercase tracking-wider text-tertiary bg-tertiary/10 border border-tertiary/20 px-2 py-1 rounded">Fiber</span>
+                            <span class="text-[10px] font-bold uppercase tracking-wider text-tertiary bg-tertiary/10 border border-tertiary/20 px-2 py-1 rounded">Vitamin C</span>
+                            <span class="text-[10px] font-bold uppercase tracking-wider text-tertiary bg-tertiary/10 border border-tertiary/20 px-2 py-1 rounded">Iron</span>
+                            <span class="text-[10px] font-bold uppercase tracking-wider text-tertiary bg-tertiary/10 border border-tertiary/20 px-2 py-1 rounded">Calcium</span>
+                            <span class="text-[10px] font-bold uppercase tracking-wider text-tertiary bg-tertiary/10 border border-tertiary/20 px-2 py-1 rounded">Potassium</span>
+                        </div>
+                    </div>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-3">
+                            <span class="w-1.5 h-1.5 bg-tertiary rounded-full mt-1.5 flex-shrink-0"></span>
+                            <span class="text-secondary text-sm leading-relaxed">Milestones at 3, 7, 14, 30, 60, and 100-day streaks</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="w-1.5 h-1.5 bg-tertiary rounded-full mt-1.5 flex-shrink-0"></span>
+                            <span class="text-secondary text-sm leading-relaxed">Complete historical ledger — every meal, every nutrient, every trend</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="w-1.5 h-1.5 bg-tertiary rounded-full mt-1.5 flex-shrink-0"></span>
+                            <span class="text-secondary text-sm leading-relaxed">GDPR-compliant data export in JSON format</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="lg:col-span-7 flex justify-center">
+                <div class="grid grid-cols-2 gap-3 sm:gap-4 w-full max-w-2xl">
+                    <div class="device-frame">
+                        <img src="Images/recipes-iphone.png" alt="AI Recipes" class="w-full"/>
+                    </div>
+                    <div class="device-frame">
+                        <img src="Images/track-nutrients-iphone.png" alt="Smart Nutrient Suggestions" class="w-full"/>
+                    </div>
+                    <div class="device-frame col-span-2">
+                        <img src="Images/nutrient-tracking-ipad.png" alt="Nutrient Dashboard" class="w-full"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Performance Delta -->
     <section class="py-16 sm:py-32 px-4 sm:px-6 max-w-5xl mx-auto">
         <div class="text-center mb-12 sm:mb-20">
-            <h2 class="text-[2rem] sm:text-[3rem] font-extrabold tracking-tight uppercase leading-none mb-4 sm:mb-6">Performance Delta</h2>
-            <p class="text-secondary text-base sm:text-lg max-w-2xl mx-auto font-medium">
-                Standard nutrition apps provide surface-level data. SuperYou provides comprehensive nutrient tracking with real-time deficiency alerts for better health management.
+            <h2 class="text-[2rem] sm:text-[3rem] font-extrabold tracking-tight uppercase leading-none mb-4 sm:mb-6">The Difference</h2>
+            <p class="text-secondary text-base sm:text-lg max-w-2xl mx-auto">
+                Standard nutrition apps give you surface-level data. SuperYou gives you the complete picture — 58+ nutrients, AI intelligence, and blood sugar prediction.
             </p>
         </div>
-        <div class="border border-outline bg-surface overflow-x-auto">
+        <div class="border border-outline bg-surface rounded-lg overflow-x-auto">
             <table class="w-full text-left border-collapse min-w-[500px]">
                 <thead>
                     <tr class="bg-surface-variant/50 border-b border-outline">
-                        <th class="p-4 sm:p-5 text-[10px] font-extrabold uppercase tracking-widest text-secondary">Diagnostic Layer</th>
-                        <th class="p-4 sm:p-5 text-[10px] font-extrabold uppercase tracking-widest text-secondary text-center">Legacy Apps</th>
-                        <th class="p-4 sm:p-5 text-[10px] font-extrabold uppercase tracking-widest text-primary text-right">SuperYou Terminal</th>
+                        <th class="p-4 sm:p-5 text-[10px] font-extrabold uppercase tracking-widest text-secondary">Capability</th>
+                        <th class="p-4 sm:p-5 text-[10px] font-extrabold uppercase tracking-widest text-secondary text-center">Standard Apps</th>
+                        <th class="p-4 sm:p-5 text-[10px] font-extrabold uppercase tracking-widest text-tertiary text-right">SuperYou</th>
                     </tr>
                 </thead>
                 <tbody class="divide-y divide-outline">
                     <tr class="hover:bg-background/50 transition-colors">
-                        <td class="p-4 sm:p-6 font-bold text-xs uppercase tracking-tight">Glucose Integration</td>
-                        <td class="p-4 sm:p-6 text-[10px] sm:text-[11px] text-secondary text-center font-mono">MANUAL ENTRY ONLY</td>
-                        <td class="p-4 sm:p-6 text-[10px] sm:text-[11px] text-tertiary text-right font-mono font-bold">REAL TIME</td>
+                        <td class="p-4 sm:p-6 font-bold text-xs uppercase tracking-tight">Nutrient Depth</td>
+                        <td class="p-4 sm:p-6 text-[10px] sm:text-[11px] text-secondary text-center font-mono">TOP 10</td>
+                        <td class="p-4 sm:p-6 text-[10px] sm:text-[11px] text-tertiary text-right font-mono font-bold">58+ NUTRIENTS</td>
                     </tr>
                     <tr class="hover:bg-background/50 transition-colors">
-                        <td class="p-4 sm:p-6 font-bold text-xs uppercase tracking-tight">Nutrient Density</td>
-                        <td class="p-4 sm:p-6 text-[10px] sm:text-[11px] text-secondary text-center font-mono">BASIC MACROS</td>
-                        <td class="p-4 sm:p-6 text-[10px] sm:text-[11px] text-tertiary text-right font-mono font-bold">MICRO ACTIVE</td>
+                        <td class="p-4 sm:p-6 font-bold text-xs uppercase tracking-tight">Glucose Intelligence</td>
+                        <td class="p-4 sm:p-6 text-[10px] sm:text-[11px] text-secondary text-center font-mono">MANUAL ENTRY</td>
+                        <td class="p-4 sm:p-6 text-[10px] sm:text-[11px] text-tertiary text-right font-mono font-bold">PREDICTION MODEL</td>
                     </tr>
                     <tr class="hover:bg-background/50 transition-colors">
-                        <td class="p-4 sm:p-6 font-bold text-xs uppercase tracking-tight">Prediction Model</td>
-                        <td class="p-4 sm:p-6 text-[10px] sm:text-[11px] text-secondary text-center font-mono">NON PREDICTIVE</td>
-                        <td class="p-4 sm:p-6 text-[10px] sm:text-[11px] text-tertiary text-right font-mono font-bold">BLOOD GLUCOSE PREDICTION</td>
+                        <td class="p-4 sm:p-6 font-bold text-xs uppercase tracking-tight">Meal Planning</td>
+                        <td class="p-4 sm:p-6 text-[10px] sm:text-[11px] text-secondary text-center font-mono">GENERIC PLANS</td>
+                        <td class="p-4 sm:p-6 text-[10px] sm:text-[11px] text-tertiary text-right font-mono font-bold">GAP-OPTIMIZED AI</td>
+                    </tr>
+                    <tr class="hover:bg-background/50 transition-colors">
+                        <td class="p-4 sm:p-6 font-bold text-xs uppercase tracking-tight">Recipe Intelligence</td>
+                        <td class="p-4 sm:p-6 text-[10px] sm:text-[11px] text-secondary text-center font-mono">STATIC DATABASE</td>
+                        <td class="p-4 sm:p-6 text-[10px] sm:text-[11px] text-tertiary text-right font-mono font-bold">AI-POWERED</td>
+                    </tr>
+                    <tr class="hover:bg-background/50 transition-colors">
+                        <td class="p-4 sm:p-6 font-bold text-xs uppercase tracking-tight">Privacy</td>
+                        <td class="p-4 sm:p-6 text-[10px] sm:text-[11px] text-secondary text-center font-mono">CLOUD DEPENDENT</td>
+                        <td class="p-4 sm:p-6 text-[10px] sm:text-[11px] text-tertiary text-right font-mono font-bold">100% PRIVATE</td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </section>
 
-    <!-- Section 4: Progression Architecture -->
-    <section class="bg-primary text-on-primary py-16 sm:py-32 px-4 sm:px-6">
-        <div class="max-w-[1600px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-24 items-center">
-            <div class="order-1 lg:order-2">
-                <span class="text-[10px] font-bold uppercase tracking-[0.3em] text-surface-variant mb-3 sm:mb-4 block">Smart Nutrition Tracking</span>
-                <h2 class="text-[2.5rem] sm:text-[3.5rem] font-black leading-[0.9] tracking-tighter uppercase mb-6 sm:mb-8">Master Your<br/>Nutrition.</h2>
-                <p class="text-on-primary/80 text-base sm:text-lg leading-relaxed mb-8 sm:mb-10 font-medium">
-                    Health isn't a destination—it's a daily practice. SuperYou transforms your nutritional data into actionable insights. Get notified about deficiencies before they become problems.
-                </p>
-                <ul class="space-y-4 sm:space-y-6">
-                    <li class="flex items-center gap-4">
-                        <span class="w-1.5 h-1.5 bg-on-primary"></span>
-                        <span class="text-sm font-bold uppercase tracking-wide">Real-time nutrient deficiency alerts</span>
-                    </li>
-                    <li class="flex items-center gap-4">
-                        <span class="w-1.5 h-1.5 bg-on-primary"></span>
-                        <span class="text-sm font-bold uppercase tracking-wide">Personalized food recommendations</span>
-                    </li>
-                </ul>
+    <!-- Closing CTA -->
+    <section class="py-16 sm:py-32 px-4 sm:px-6 border-t border-outline">
+        <div class="max-w-3xl mx-auto text-center">
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 border border-outline bg-surface rounded-lg mb-6 sm:mb-8">
+                <span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse"></span>
+                <span class="text-[10px] font-bold uppercase tracking-widest text-secondary">Available Now on iOS</span>
             </div>
+            <h2 class="text-[2rem] sm:text-[3rem] font-extrabold tracking-tight uppercase leading-none mb-4 sm:mb-6">From your first meal<br/>to your 100th streak.</h2>
+            <p class="text-secondary text-base sm:text-lg max-w-xl mx-auto mb-8 sm:mb-10 leading-relaxed">
+                SuperYou grows with you. Start with a personalized baseline, track everything you eat, understand what's missing, and let AI fill the gaps.
+            </p>
+            <a href="https://apps.apple.com/in/app/superyou-dominate-your-day/id6761914195" target="_blank" class="inline-flex items-center gap-4 border border-tertiary/40 bg-tertiary/10 px-8 py-5 cursor-pointer hover:bg-tertiary/20 transition-colors rounded-lg">
+                <span class="material-symbols-outlined text-tertiary text-3xl">app_shortcut</span>
+                <div class="text-left leading-none">
+                    <div class="text-[11px] font-bold uppercase text-secondary">Download SuperYou</div>
+                    <div class="text-[16px] font-extrabold uppercase text-tertiary">App Store</div>
+                </div>
+            </a>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-background border-t border-outline">
+    <footer class="bg-surface border-t border-outline">
         <div class="flex flex-col md:flex-row justify-between items-center px-4 sm:px-6 py-8 sm:py-12 max-w-[1600px] mx-auto gap-6 sm:gap-8">
             <div class="text-center md:text-left">
-                <div class="text-sm font-black tracking-[0.2em] mb-3">SuperYou</div>
+                <div class="text-sm font-black tracking-[0.2em] mb-3 flex items-center justify-center md:justify-start gap-2">
+                    <span class="w-2 h-2 bg-tertiary rounded-full"></span>
+                    SuperYou
+                </div>
                 <div class="text-[9px] uppercase tracking-widest text-secondary font-medium">
-                    © 2026 SuperYou. NUTRIENT TRACKING SYSTEMS. ALL DATA ENCRYPTED.
+                    &copy; 2026 SuperYou. Precision Nutrition Systems. All Data Encrypted.
                 </div>
             </div>
-            <div class="flex flex-col items-center gap-4">
-                <a href="https://apps.apple.com/in/app/superyou-dominate-your-day/id6761914195" target="_blank" class="border border-outline px-6 py-3 flex items-center gap-4 cursor-pointer hover:bg-surface transition-colors">
-                    <span class="material-symbols-outlined text-primary">app_shortcut</span>
-                    <div class="text-left leading-none">
-                        <div class="text-[8px] font-bold uppercase text-secondary">Download SuperYou</div>
-                        <div class="text-[12px] font-extrabold uppercase">APP STORE</div>
-                    </div>
-                </a>
-            </div>
             <div class="flex flex-wrap justify-center gap-4 sm:gap-8">
-                <a class="text-[10px] font-bold uppercase tracking-widest text-secondary hover:text-primary transition-colors" href="privacy.html">Privacy_Layer</a>
-                <a class="text-[10px] font-bold uppercase tracking-widest text-secondary hover:text-primary transition-colors" href="terms.html">Terms_Execute</a>
+                <a class="text-[10px] font-bold uppercase tracking-widest text-secondary hover:text-primary transition-colors" href="privacy.html">Privacy</a>
+                <a class="text-[10px] font-bold uppercase tracking-widest text-secondary hover:text-primary transition-colors" href="terms.html">Terms</a>
             </div>
         </div>
     </footer>
